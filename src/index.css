@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+  font-family: 'Playfair Display', serif;
+}
+.text-gradient {
+  background: linear-gradient(45deg, rgba(100, 84, 240, 1), rgba(104, 133, 242, 1), rgba(110, 222, 245, 1));
+  -webkit-background-clip: text; /* This clips the background to the text */
+  color: transparent; /* Make the text color transparent so the gradient shows */
+  font-weight: bold; /* Optional: makes text bolder */
+}
