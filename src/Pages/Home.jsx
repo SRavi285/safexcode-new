@@ -223,7 +223,7 @@ const Home = () => {
                 <img src={appStore} alt="appstore" />
               </a>
               <a
-                href="https://play.google.com/store/apps/details?id=com.safexcode.app"
+                href="https://play.google.com/store/apps/details?id=com.carshala.safexcode&pcampaignid=web_share"
                 target="_blank"
                 rel="noopener noreferrer"
               >
