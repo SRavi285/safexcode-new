@@ -10,7 +10,7 @@ import key from "../assets/key.png";
 import qrcode from "../assets/qr-code.png";
 import qrcodescan from "../assets/qr-code-scan.png";
 import checkicon from "../assets/Check icon.png";
-import mobile from "../assets/mobile.png";
+import mobile from "../assets/Mobile.png";
 import playStore from "../assets/PlayStore.png";
 import appStore from "../assets/AppStore.png";
 
