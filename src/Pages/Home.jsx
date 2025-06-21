@@ -9,14 +9,48 @@ import heroImg from "../assets/heroimg.png";
 import key from "../assets/key.png";
 import qrcode from "../assets/qr-code.png";
 import qrcodescan from "../assets/qr-code-scan.png";
-import checkicon from "../assets/Check icon.png";
 import mobile from "../assets/Mobile.png";
 import playStore from "../assets/PlayStore.png";
 import appStore from "../assets/AppStore.png";
-import PostCard from "../components/PostCard";
+import ScrollableCardSection from "../components/ScrollableCardSection";
 
 const backgroundimg =
   "https://img.freepik.com/free-vector/wavy-smooth-lines-pattern-background_1017-14206.jpg?ga=GA1.1.1422311903.1750266066&semt=ais_hybrid&w=740";
+
+const card = [
+  {
+    rating: 5,
+    description:
+      "I love how easy it is to connect with people without giving out my personal number. The QR code feature is a game changer!",
+    name: "Vivek Kumar",
+    role: "Business Owner",
+    // cardImage: "https://via.placeholder.com/300x300",
+  },
+  {
+    rating: 4,
+    description:
+      "The app is user-friendly and the QR code system is very effective. Highly recommend it!",
+    name: "Sarah ",
+    role: "Freelancer",
+    // cardImage: "https://via.placeholder.com/300x300",
+  },
+  {
+    rating: 4,
+    description:
+      "It's convenient and secure. No more unwanted calls or leaks of personal info.",
+    name: "Ankit ",
+    role: "Photographer",
+    // cardImage: "https://via.placeholder.com/300x300",
+  },
+  {
+    rating: 5,
+    description:
+      "It's convenient and secure. No more unwanted calls or leaks of personal info.",
+    name: "Singh",
+    role: "Photographer",
+    // cardImage: "https://via.placeholder.com/300x300",
+  },
+];
 
 const Home = () => {
   return (
@@ -50,7 +84,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Features Section */}
+      {/* Features */}
       <div
         className="py-20"
         style={{
@@ -102,8 +136,7 @@ const Home = () => {
           How It Works
         </h1>
         <p className="text-sm text-gray-600 text-center mb-10">
-          Simple, transparent pricing that grows with you. Try any plan free for
-          30 days.
+          Simple, transparent setup. Try any plan free for 30 days.
         </p>
         <div className="flex flex-col md:flex-row items-center gap-8">
           {[
@@ -119,7 +152,7 @@ const Home = () => {
             },
             {
               icon: (
-                <img src={qrcodescan} alt="QR Code" className="w-16 h-16" />
+                <img src={qrcodescan} alt="QR Scan" className="w-16 h-16" />
               ),
               title: "Get Connected",
               text: "Others scan your QR code to call you without seeing your number",
@@ -137,98 +170,8 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Plans Section */}
-      <div
-        style={{
-          backgroundImage: `url('${backgroundimg}')`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-4 py-20">
-          <div className="flex flex-col md:flex-row justify-center gap-10">
-            {/* Left Description */}
-            <div className="flex flex-col max-w-sm space-y-4">
-              <h2 className="text-3xl font-semibold">
-                Subscription Plans for all sizes
-              </h2>
-              <p className="text-gray-600">
-                Simple, transparent pricing that grows with you. Try any plan
-                free for 30 days.
-              </p>
-            </div>
-
-            {/* Plan Cards */}
-            <div className="flex flex-col md:flex-row gap-8">
-              {/* Standard Plan */}
-              <div className="relative flex flex-col items-center shadow-2xl p-8 rounded-2xl max-w-sm space-y-4 border-2 border-amber-600 bg-white">
-                <div className="absolute -top-4 bg-amber-600 text-white py-1 px-4 rounded-full text-sm font-bold">
-                  MOST POPULAR
-                </div>
-                <h2 className="text-md font-semibold text-[#6941C6] mt-4">
-                  Standard Plan
-                </h2>
-                <h3 className="text-3xl font-semibold">₹299</h3>
-                <p className="text-gray-500">6 months</p>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex gap-2 items-center">
-                    <img src={checkicon} alt="check" /> 1 QR Code
-                  </li>
-                  <li className="flex gap-2 items-center">
-                    <img src={checkicon} alt="check" /> Basic call forwarding
-                  </li>
-                  <li className="flex gap-2 items-center">
-                    <img src={checkicon} alt="check" /> 24/7 phone support
-                  </li>
-                  <li className="flex gap-2 items-center">
-                    <img src={checkicon} alt="check" /> Priority email support
-                  </li>
-                  <li className="flex gap-2 items-center">
-                    <img src={checkicon} alt="check" /> Call statistics
-                  </li>
-                </ul>
-                <button className="bg-[#6458F0] hover:bg-[#7871bd] transition text-white font-bold py-2 px-4 rounded-sm w-full">
-                  Choose Plan
-                </button>
-              </div>
-
-              {/* Enterprise Plan */}
-              <div className="flex flex-col items-center shadow-2xl p-8 rounded-2xl max-w-sm space-y-4 bg-white border-2 border-gray-200">
-                <h2 className="text-md font-semibold">Enterprise Plan</h2>
-                <h3 className="text-2xl font-semibold">₹999</h3>
-                <p className="text-gray-500">12 months</p>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex gap-2 items-center">
-                    <img src={checkicon} alt="check" /> Advanced custom fields
-                  </li>
-                  <li className="flex gap-2 items-center">
-                    <img src={checkicon} alt="check" /> Audit log and data
-                    history
-                  </li>
-                  <li className="flex gap-2 items-center">
-                    <img src={checkicon} alt="check" /> Unlimited individual
-                    users
-                  </li>
-                  <li className="flex gap-2 items-center">
-                    <img src={checkicon} alt="check" /> Unlimited individual
-                    data
-                  </li>
-                  <li className="flex gap-2 items-center">
-                    <img src={checkicon} alt="check" /> Personalized + priority
-                    service
-                  </li>
-                </ul>
-                <button className="bg-[#6458F0] hover:bg-[#7871bd] transition text-white font-bold py-2 px-4 rounded-sm w-full">
-                  Choose Plan
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Mobile App Section */}
-      <div className="bg-black py-20 px-6 flex ">
+      <div className="bg-black py-20 px-6 flex">
         <img
           src={mobile}
           alt="mobile"
@@ -244,31 +187,28 @@ const Home = () => {
               <a
                 onClick={() => alert("App Store link is not available yet")}
                 className="cursor-pointer"
-                rel="noopener noreferrer"
               >
                 <img src={appStore} alt="App Store" className="w-40" />
               </a>
               <a
-                className="cursor-pointer"
-                href="https://play.google.com/store/apps/details?id=com.carshala.safexcode&pcampaignid=web_share"
+                href="https://play.google.com/store/apps/details?id=com.carshala.safexcode"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={playStore} alt="playstore" className="w-40" />
+                <img src={playStore} alt="Play Store" className="w-40" />
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* user post  */}
-      <div className="bg-gray-50 flex flex-col items-center py-8 px-6">
+      {/* User Reviews */}
+      <div className="bg-gray-50 flex flex-col items-center py-12 px-6">
         <h2 className="text-3xl font-semibold">What our users say</h2>
         <p className="text-gray-400 text-center mb-10">
-          Simple, transparent pricing that grows with you. Try any plan free for
-          30 days.
+          Hear how safeXcode is making privacy a priority.
         </p>
-        <PostCard />
+        <ScrollableCardSection cards={card} />
       </div>
     </div>
   );

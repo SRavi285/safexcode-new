@@ -10,3 +10,11 @@ body {
   color: transparent; /* Make the text color transparent so the gradient shows */
   font-weight: bold; /* Optional: makes text bolder */
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
